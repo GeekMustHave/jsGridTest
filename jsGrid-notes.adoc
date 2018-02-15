@@ -1,0 +1,135 @@
+= JSGrid Notes
+John HR Schuster<John.schuster@mindspring.com>
+v2.1b,02/14/2018:Dev Notes
+:Author: John HR Schuster
+:Company: Phoenix Learning Labs LLC
+:toc: left
+:toclevels: 4:
+:imagesdir: ./images
+:pagenums:
+:experimental:
+:source-hightlighter: pygments
+:icons: font
+:docdir: */documents
+:tags: icon:tags[role='blue']
+:checked: icon:check-square[role='green']
+:warning: icon:warning[role='yellow']
+:down: icon:thumbs-o-down[role='red']
+:up: icon:thumbs-o-up[role='green']
+:bookmark: icon:bookmark[role='blue']
+:research: icon:university[role='purple']bower
+
+The intent is to use JSGrid for doing wireframes with JSON data files.
+This would make the wireframes more realistic.
+It should be easy to convert them into a production object.
+
+
+== Introduction
+
+jsGrid an open source grid control woth many options.
+
+http://js-grid.com/getting-started/[Excellent starter project]
+
+This will be the one used for this test projects.
+
+Text from the site will be included here for reference.
+
+== Project start
+
+This is going to ne a node project so we will do the npm init which create the package.json file.
+
+----
+npm init 
+----
+
+.package.json file
+[source javascript]
+----
+{
+  "name": "jsgridtest",
+  "version": "2.1.0",
+  "description": "Test of jsGrid for use in wireframing",
+  "main": "jsGridTest.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John HR Schuster",
+  "license": "MIT"
+}
+----
+
+=== GIT within MSCode.
+
+The integrated GIT commands in MSCode make it easy to manage GIT for any project.
+
+Create a external GIT repository on GITHub for copy of the local repository.
+
+.create remote GITHub repository
+image::github-start.png[GITHUB New repository]
+
+Create the local version of the GIT repository.
+
+.Create GIT repository
+image::git-start.png[GIT Start]
+
+After the initial GIT repository is created there should be some files to be GIT'd.
+
+.After repository created
+image::git-created.png[GIT Repository Created]
+
+Stage the changes
+
+.Stage the changes
+image::git-stage.png[Stage changes]
+
+Do the initial commit, add a useful message to remind yourself what these changes are for.
+
+.Initial GIT commit
+image::git-firstcommit.png[First commit]
+
+
+
+==== Set up `remote` repository
+
+To push, pull and sync you need to have a Git origin set up. 
+You can get the required URL from the repo host. Once you have that URL, 
+you need to add it to the Git settings by running a couple of command line actions.
+The URL for this project is `https://github.com/GeekMustHave/jsGridTest`
+
+----
+git remote add origin https://github.com/GeekMustHave/jsGridTest
+git push -u origin master <1>
+----
+<1> error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/GeekMustHave/jsGridTest'
+
+Add some information to allow GIT to know who you are.
+
+.GIT User information
+----
+git config user.email "john.schuster@phoenixworkgrpoup.com" <1>
+git config --global user.name "GeekMustHave" <2>
+----
+<1> Leave off `--global` 
+<1> Leave off `--global` 
+
+Upload the local repository to the Remote GITHUB, login required.
+
+.GITHub login
+image::github-login.png[GITHub login]
+
+NOTE: If files already exist in the remote reporitory (readme.md, etc).  This step will fail requetsing you do a `pull` first 
+
+
+
+=== jsGrid libraries
+
+A copy of the jsGrid library is in the `assets` folders.
+
+==== jQuery is required
+
+Simple way is to inlude the CDN for jQuery in the HTML file.
+
+----
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+----
